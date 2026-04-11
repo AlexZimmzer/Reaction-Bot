@@ -4,7 +4,7 @@ import json
 import os
 
 # Token for bot connection
-TOKEN = "MTQ5MjYwODczNDM2OTY3NzM5Mg.GfKtfu.4A5oCI9hcLUKmA2sF-EIWSJJferR42w-nqM-rg"
+TOKEN = "BOT_TOKEN"
 
 heartList = ["❤️", "🤎", "🧡", "💛", "💚", "💙", "🩵", "💜",
              "🩷", "🖤", "🩶", "🤍", "❣️", "💕", "💞", "💓",
@@ -63,7 +63,7 @@ async def leaderboard(ctx):
         return
     
     sorted_scores = sorted(scores.items(), key=lambda x: x[1], reverse=True)
-    msg = "```**Leaderboard:**\n\n```"
+    msg = "**Leaderboard:**\n\n"
 
     for i, (user_id, score) in enumerate(sorted_scores[:5], start=1):
         user = await bot.fetch_user(int(user_id))

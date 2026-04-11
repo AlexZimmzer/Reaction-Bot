@@ -4,7 +4,7 @@ import json
 import os
 
 # Token for bot connection
-TOKEN = "I DONT CARE"
+TOKEN = "MTQ5MjYwODczNDM2OTY3NzM5Mg.GfKtfu.4A5oCI9hcLUKmA2sF-EIWSJJferR42w-nqM-rg"
 
 heartList = ["❤️", "🤎", "🧡", "💛", "💚", "💙", "🩵", "💜",
              "🩷", "🖤", "🩶", "🤍", "❣️", "💕", "💞", "💓",
@@ -53,20 +53,21 @@ async def score(ctx, user: discord.Member = None):
         user = ctx.author
     user_id = str(user.id)
     count = scores.get(user_id, 0)
-    await ctx.send(f"{user.name}'s ❤️ score: {count}")
+    await ctx.send(f"```{user.name}'s ❤️ score: {count}```")
 
+# Leaderboard command to display top 5 users
 @bot.command()
 async def leaderboard(ctx):
     if not scores:
-        await ctx.send("No scores yet.")
+        await ctx.send("```No scores yet.```")
         return
     
     sorted_scores = sorted(scores.items(), key=lambda x: x[1], reverse=True)
-    msg = "**Leaderboard:**\n\n"
+    msg = "```**Leaderboard:**\n\n```"
 
     for i, (user_id, score) in enumerate(sorted_scores[:5], start=1):
         user = await bot.fetch_user(int(user_id))
-        msg += f"{i}. {user.name} - {score} ❤️\n"
+        msg += f"```{i}. {user.name} - {score} ❤️\n```"
     await ctx.send(msg)
 
 
@@ -76,10 +77,10 @@ async def leaderboard(ctx):
 async def backfill(ctx):
     scores.clear()
     save_scores()
-    await ctx.send("Starting backfill... this might take me a while...")
+    await ctx.send("```Starting backfill... this might take me a while...```")
 
     for channel in ctx.guild.text_channels:
-        await ctx.send(f"Scanning #{channel.name} :3")
+        await ctx.send(f"```Scanning #{channel.name} :3```")
         try:
             async for message in channel.history(limit=1000):
 
@@ -95,9 +96,9 @@ async def backfill(ctx):
                     scores[user_id] = scores.get(user_id, 0) + reaction.count
 
         except Exception as e:
-            print(f"Skipped channel {channel.name}: {e}")
+            print(f"```Skipped channel {channel.name}: {e}```")
 
     save_scores()
-    await ctx.send("Backfill complete!\n Check out your leaderboard! with `!leaderboard`")
+    await ctx.send("```Backfill complete!\n Check out your leaderboard! with `!leaderboard````")
 
 bot.run(TOKEN)

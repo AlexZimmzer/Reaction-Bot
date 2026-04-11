@@ -4,7 +4,7 @@ import json
 import os
 
 # Token for bot connection
-TOKEN = ""
+TOKEN = "I DONT CARE"
 
 heartList = ["❤️", "🤎", "🧡", "💛", "💚", "💙", "🩵", "💜",
              "🩷", "🖤", "🩶", "🤍", "❣️", "💕", "💞", "💓",

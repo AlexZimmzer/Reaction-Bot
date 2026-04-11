@@ -6,7 +6,7 @@ This Discord Bot records the number of heart reacts a user has on their messages
 ## Discord Connection
 This bot was created using the [Discord Developer Portal](https://discord.com/developers/home). Using OAuth2's bot scope, it can be invited to servers using a URL.
 
-The bot also uses general permissions in the server to operate, including View Channels and Send Messages. It uses a generated Token to connect with the bot.py file.
+The bot also uses general permissions in the server to operate, including View Channels and Send Messages. It uses a generated Token to connect with the bot.py file. This token is used in the actual code, but I ran into so many problems with Git trying to get this committed. Simce I'm only using this for one server, I didnt really care if the token was used somewhere, but Git just refused to commit without any changes, and I really didn't want to worry about SECRETS right now. So, the token is customizable :)
 
 ## bot.py
 This file contains the main operation of the bot, like the permissions, functions, and commands.

@@ -26,3 +26,20 @@ Alternatively, if you want to start with a fresh new score, that works too!
 
 ## scores.json
 This file contains the list of each user's score. It is accessed in all of the commands and functions.
+
+# Changelog
+
+## 4/12
+Today I added a new feature to the bot: weekly scores! Now, users are able to see who in the server has gotten the most heart reacts in the past week.
+
+### weekly_reset
+This asyncronous function resets the weekly counter on Sundays at midnight. It calculates the time until the end of the week, determines if the current time is past the the current week's reset time, and will send a leaderboard message to the provided channel from the next command...
+
+### !set_leaderboard_channel
+This command requires a (channel: discord.TextChannel) parameter, and sets the channel that the weekly message will be sent to!
+
+### !weekly
+Weekly is a command similar to !leaderboard that will just show the current week's leaderboard. Nothing super different.
+
+### Other
+I also took the opportunity to use [Railway](https://railway.com/) to explore deployment. I was able to use this GitHub repository to remotely run the bot using their servers! Pretty cool stuff!

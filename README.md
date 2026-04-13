@@ -12,10 +12,10 @@ The bot also uses general permissions in the server to operate, including View C
 This file contains the main operation of the bot, like the permissions, functions, and commands.
 
 ### !score (user)
-This command will display the score of either the user, or the author if no user was attached.
+This command will display the score of either the user if the argument was added, or the author if no user was attached.
 
 ### !leaderboard
-This command shows the top 5 user scores. 
+This command shows the top 5 user scores.
 
 ### !backfill
 This command scans previous messages for heart reactions and updates scores. This command first clears the score.json file, iterates through each channel in the server, and records the number of heart reactions on user messages. The existing operation scans the past 1,000 messages in a channel, but this is fully customizable.

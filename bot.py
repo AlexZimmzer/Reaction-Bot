@@ -7,7 +7,7 @@ import asyncio
 from datetime import datetime, timedelta
 
 # Token for bot connection
-TOKEN = "
+TOKEN = os.getenv("DISCORD_TOKEN")
 
 heartList = ["❤️", "🤎", "🧡", "💛", "💚", "💙", "🩵", "💜",
              "🩷", "🖤", "🩶", "🤍", "❣️", "💕", "💞", "💓",

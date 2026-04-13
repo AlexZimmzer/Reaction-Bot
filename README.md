@@ -36,10 +36,13 @@ Today I added a new feature to the bot: weekly scores! Now, users are able to se
 This asyncronous function resets the weekly counter on Sundays at midnight. It calculates the time until the end of the week, determines if the current time is past the the current week's reset time, and will send a leaderboard message to the provided channel from the next command...
 
 ### !set_leaderboard_channel
-This command requires a (channel: discord.TextChannel) parameter, and sets the channel that the weekly message will be sent to!
+This command requires a **(channel: discord.TextChannel)** parameter, and sets the channel that the weekly message will be sent to. Exploring moderator-only commands might be a future addition, since not everyone should be able to use this.
 
 ### !weekly
-Weekly is a command similar to !leaderboard that will just show the current week's leaderboard. Nothing super different.
+This is a command similar to **!leaderboard** that will just show the current week's leaderboard. Nothing super different here.
+
+### weekly_scores.json
+This is almost exactly similar to scores.json, however this file is reset weekly by **weekly_reset**.
 
 ### Other
 I also took the opportunity to use [Railway](https://railway.com/) to explore deployment. I was able to use this GitHub repository to remotely run the bot using their servers! Pretty cool stuff!
